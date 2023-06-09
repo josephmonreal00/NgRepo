@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'NgDocs';
+  public title = 'NgDocs';
+  public valueFromParent = "DefaultValueFromParent";
+
+  public propertyValue(event: Event): void {
+    this.valueFromParent = (event.target as HTMLInputElement).value;
+  }
 }
